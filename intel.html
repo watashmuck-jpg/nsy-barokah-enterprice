@@ -1,153 +1,771 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="ms">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>NS Yasmin Barokah Enterprise</title>
-<style>
-:root{--ink:#16100d;--ivory:#f7f0e3;--paper:#fffaf1;--orange:#fd7636;--gold:#e5ac48;--copper:#af4b23;--ember:#68251f;--muted:#64544a;--rule:#d9cbb9;font-family:system-ui,-apple-system,"Segoe UI",sans-serif;color:var(--ink);background:var(--ivory)}
-*{box-sizing:border-box}body{margin:0}img{display:block;max-width:100%}a{color:inherit;text-underline-offset:.25em}
-h1,h2,h3,blockquote,dt{font-family:Georgia,"Times New Roman",serif;font-weight:400}h1,h2,h3,p,figure,dl,dd{margin:0}
-h1{font-size:clamp(3rem,6.4vw,6rem);line-height:.96;letter-spacing:-.058em}
-h1 em{color:var(--orange);font-style:normal}h2{font-size:clamp(2.3rem,4.8vw,4.5rem);line-height:1;letter-spacing:-.048em}h3{font-size:1.5rem}
-.shell{width:min(100% - 3rem,1152px);margin:auto}.section{padding-block:clamp(3.6rem,8vw,7.25rem)}
-.site-header,.hero,.contact,footer{background:var(--ink);color:var(--ivory)}.site-header{border-bottom:1px solid #43352b}
-.nav{min-height:80px;display:flex;align-items:center;justify-content:space-between;gap:1rem}
-.brand{display:flex;align-items:center;gap:.65rem;text-decoration:none;font:1.12rem Georgia,serif}.brand img{border-radius:50%}.brand small{display:block;color:#e2b98d;font:.57rem system-ui;letter-spacing:.24em}
-nav{display:flex;flex-wrap:wrap;gap:.55rem 2rem}nav a{text-decoration:none;font-size:.88rem}.nav-contact{color:var(--orange)}
-.hero{overflow:hidden}.hero-inner{display:grid;grid-template-columns:1.04fr .96fr;gap:clamp(2rem,6vw,5.5rem);align-items:center;padding-block:clamp(2.5rem,6vw,5rem)}
-.eyebrow{font-size:.72rem;font-weight:700;letter-spacing:.15em;line-height:1.5;color:var(--ember);margin-bottom:.9rem}.hero .eyebrow,.standards .eyebrow,.contact .eyebrow{color:var(--orange)}
-.hero-intro{max-width:32rem;margin-top:1.35rem;color:#e4d6c7;font-size:1.04rem;line-height:1.7}.hero-actions{margin-top:1.8rem;display:flex;gap:1.4rem;align-items:center;flex-wrap:wrap}
-.button{display:inline-flex;gap:.85rem;align-items:center;min-height:46px;padding:.7rem 1rem;border-radius:.25rem;text-decoration:none;font-weight:650;font-size:.91rem}.primary{background:var(--orange);color:var(--ink)}
-.hero-image{position:relative}.hero-image img{width:100%;height:clamp(330px,42vw,520px);object-fit:cover;border-radius:.4rem}.hero-image figcaption{position:absolute;bottom:1rem;left:1rem;padding:.45rem .65rem;background:#16100de8;font-size:.75rem}
-.section-head{display:grid;grid-template-columns:1.65fr 1fr;gap:1rem 2rem;align-items:end;margin-bottom:3rem}.section-head>p,.service-copy p,.experience p,.about p{line-height:1.65;color:var(--muted)}
-.services{display:grid;grid-template-columns:repeat(3,1fr);gap:1.4rem}.services article{background:var(--paper);border:1px solid var(--rule);border-radius:.45rem;overflow:hidden}.services img{width:100%;aspect-ratio:1.65;object-fit:cover}.service-copy{padding:1.15rem 1.25rem 1.4rem}.index{font-size:.75rem;font-weight:700;letter-spacing:.1em;color:var(--ember)}.service-copy h3{margin-block:.45rem}
-.standards{background:var(--ember);color:var(--ivory)}.standards .section-head>p{color:var(--ivory)}.principles{display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem}.principles>div{border-top:1px solid #aa7366;padding-top:1rem}.principles dt{font-size:2.3rem}.principles dt span{display:block;font:700 .75rem system-ui;color:#ffd28d}.principles dd{line-height:1.6;margin-top:.45rem}
-.experience{display:grid;grid-template-columns:1fr 1.1fr;gap:2rem 5rem}.experience-list{list-style:none;padding:0;margin:0;border-top:1px solid var(--rule)}.experience-list li{display:grid;grid-template-columns:2.2rem 1fr;padding:1rem 0;border-bottom:1px solid var(--rule)}.experience-list p{margin-top:.25rem}
-.about{background:#eee0cd}.about-inner{display:grid;grid-template-columns:1fr 1fr;align-items:center;gap:2rem 5rem}.about img{width:100%;aspect-ratio:1.18;object-fit:cover;border-radius:.45rem}.about h2+p{margin-top:1rem}
-blockquote{border-left:3px solid var(--copper);padding-left:1rem;margin:1.35rem 0;color:var(--ember);font-size:1.6rem}.registration strong{display:block;color:var(--ink);font-size:.95rem}
-.contact-inner{display:grid;grid-template-columns:1.4fr 1fr;align-items:end;gap:2rem 4rem}.contact-label{font-size:.72rem;letter-spacing:.16em;font-weight:700;color:var(--gold);margin-bottom:.6rem}address{font-style:normal;line-height:1.65;margin-bottom:1rem}.contact-details{display:grid;gap:1.35rem}.contact-block{border-top:1px solid #604c3c;padding-top:1rem;line-height:1.65}.contact-block a{color:var(--ivory);text-decoration-color:var(--gold)}.closed{color:#d8b9a3}
-footer{border-top:1px solid #43352b;color:#e4d6c7}.footer-inner{display:flex;justify-content:space-between;flex-wrap:wrap;gap:.75rem;padding-block:1.1rem;font-size:.82rem}
-@media(max-width:760px){.nav{flex-wrap:wrap;padding-block:.8rem}nav{width:100%;gap:.8rem 1rem}.hero-inner,.section-head,.experience,.about-inner,.contact-inner{grid-template-columns:1fr}.services{grid-template-columns:1fr}.services article{display:grid;grid-template-columns:.9fr 1.1fr}.services img{height:100%;aspect-ratio:auto}}
-@media(max-width:460px){.shell{width:calc(100% - 2rem)}h1{font-size:clamp(2.45rem,11vw,3.15rem)}.services article{display:block}.services img{aspect-ratio:2;height:auto}.principles{grid-template-columns:1fr}}
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NS Yasmin Barokah Enterprise</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Yeseva+One&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --hitam: #000000;
+      --krim: #F7F0E3;
+      --emas: #E5AC48;
+      --tembaga: #AF4B23;
+      --oren: #FD7636;
+      --coklat: #68251F;
+      --kelabu: #6f6258;
+    }
+
+    * {
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      background: var(--krim);
+      color: var(--hitam);
+      font-family: "DM Sans", sans-serif;
+      line-height: 1.6;
+    }
+
+    img {
+      width: 100%;
+      display: block;
+      object-fit: cover;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .container {
+      width: min(1120px, calc(100% - 40px));
+      margin: auto;
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      background: var(--hitam);
+      color: var(--krim);
+      border-bottom: 1px solid #3c3028;
+    }
+
+    .navbar {
+      min-height: 78px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-family: "Yeseva One", serif;
+      font-size: 18px;
+    }
+
+    .logo img {
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      background: white;
+    }
+
+    .logo small {
+      display: block;
+      margin-top: 2px;
+      color: var(--emas);
+      font-family: "DM Sans", sans-serif;
+      font-size: 9px;
+      letter-spacing: 3px;
+    }
+
+    nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 22px;
+      font-size: 14px;
+      font-weight: 600;
+    }
+
+    nav a:hover {
+      color: var(--emas);
+    }
+
+    .hero {
+      background: var(--hitam);
+      color: var(--krim);
+      padding: 80px 0;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      align-items: center;
+      gap: 64px;
+    }
+
+    .label {
+      margin-bottom: 16px;
+      color: var(--oren);
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 2px;
+    }
+
+    h1,
+    h2,
+    h3 {
+      margin: 0;
+      font-family: "Yeseva One", serif;
+      font-weight: 400;
+      line-height: 1.08;
+    }
+
+    h1 {
+      max-width: 650px;
+      font-size: clamp(48px, 7vw, 88px);
+    }
+
+    h1 span {
+      color: var(--oren);
+    }
+
+    .hero-text {
+      max-width: 520px;
+      margin: 24px 0 30px;
+      color: #eadfd3;
+      font-size: 18px;
+    }
+
+    .buttons {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 18px;
+    }
+
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 48px;
+      padding: 12px 20px;
+      border-radius: 4px;
+      font-weight: 700;
+      transition: .2s ease;
+    }
+
+    .button-primary {
+      background: var(--oren);
+      color: var(--hitam);
+    }
+
+    .button-primary:hover {
+      background: var(--emas);
+    }
+
+    .button-outline {
+      border: 1px solid var(--emas);
+      color: var(--krim);
+    }
+
+    .button-outline:hover {
+      background: var(--emas);
+      color: var(--hitam);
+    }
+
+    .hero-image {
+      position: relative;
+    }
+
+    .hero-image::after {
+      position: absolute;
+      content: "";
+      inset: 14px -14px -14px 14px;
+      border: 1px solid var(--tembaga);
+      border-radius: 8px;
+      z-index: 0;
+    }
+
+    .hero-image img {
+      position: relative;
+      z-index: 1;
+      height: 520px;
+      border-radius: 8px;
+    }
+
+    .hero-badge {
+      position: absolute;
+      right: 18px;
+      bottom: 18px;
+      z-index: 2;
+      padding: 10px 14px;
+      background: rgba(0, 0, 0, .88);
+      color: var(--krim);
+      font-size: 12px;
+      font-weight: 700;
+    }
+
+    section {
+      padding: 100px 0;
+    }
+
+    .section-heading {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+      align-items: end;
+      margin-bottom: 42px;
+    }
+
+    h2 {
+      font-size: clamp(38px, 5vw, 68px);
+    }
+
+    .section-heading p {
+      color: var(--kelabu);
+      font-size: 17px;
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .card {
+      overflow: hidden;
+      background: #fffaf2;
+      border: 1px solid #dccdbb;
+      border-radius: 8px;
+    }
+
+    .card img {
+      height: 230px;
+    }
+
+    .card-content {
+      padding: 24px;
+    }
+
+    .card-number {
+      color: var(--tembaga);
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 2px;
+    }
+
+    .card h3 {
+      margin: 12px 0 8px;
+      font-size: 26px;
+    }
+
+    .card p {
+      margin: 0;
+      color: var(--kelabu);
+    }
+
+    .quality {
+      background: var(--coklat);
+      color: var(--krim);
+    }
+
+    .quality .section-heading p {
+      color: var(--krim);
+    }
+
+    .quality-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 28px;
+    }
+
+    .quality-item {
+      padding-top: 20px;
+      border-top: 1px solid #a56c5d;
+    }
+
+    .quality-item strong {
+      display: block;
+      margin-bottom: 12px;
+      color: var(--emas);
+      font-family: "Yeseva One", serif;
+      font-size: 34px;
+      font-weight: 400;
+    }
+
+    .quality-item p {
+      margin: 0;
+      color: var(--krim);
+    }
+
+    .experience {
+      display: grid;
+      grid-template-columns: .9fr 1.1fr;
+      gap: 80px;
+    }
+
+    .experience-intro p {
+      max-width: 430px;
+      color: var(--kelabu);
+      font-size: 17px;
+    }
+
+    .experience-list {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      border-top: 1px solid #d8c9b7;
+    }
+
+    .experience-list li {
+      display: grid;
+      grid-template-columns: 44px 1fr;
+      gap: 10px;
+      padding: 20px 0;
+      border-bottom: 1px solid #d8c9b7;
+    }
+
+    .experience-list span {
+      color: var(--tembaga);
+      font-weight: 700;
+    }
+
+    .experience-list h3 {
+      font-size: 25px;
+    }
+
+    .experience-list p {
+      margin: 6px 0 0;
+      color: var(--kelabu);
+    }
+
+    .about {
+      background: #eee0cd;
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 70px;
+      align-items: center;
+    }
+
+    .about-image {
+      height: 430px;
+      border-radius: 8px;
+    }
+
+    .about-text p {
+      color: var(--kelabu);
+      font-size: 17px;
+    }
+
+    blockquote {
+      margin: 28px 0;
+      padding-left: 20px;
+      border-left: 4px solid var(--tembaga);
+      color: var(--coklat);
+      font-family: "Yeseva One", serif;
+      font-size: 28px;
+      line-height: 1.3;
+    }
+
+    .contact {
+      background: var(--hitam);
+      color: var(--krim);
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 70px;
+      align-items: start;
+    }
+
+    .contact h2 {
+      max-width: 520px;
+    }
+
+    .contact-box {
+      display: grid;
+      gap: 26px;
+    }
+
+    .contact-item {
+      padding-top: 18px;
+      border-top: 1px solid #604c3c;
+    }
+
+    .contact-title {
+      margin-bottom: 8px;
+      color: var(--emas);
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 2px;
+    }
+
+    address,
+    .contact-item p {
+      margin: 0;
+      font-style: normal;
+      line-height: 1.8;
+    }
+
+    .contact-item a:hover {
+      color: var(--emas);
+    }
+
+    footer {
+      padding: 24px 0;
+      background: var(--hitam);
+      color: #d8c8b9;
+      border-top: 1px solid #3c3028;
+      font-size: 13px;
+    }
+
+    .footer-content {
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    @media (max-width: 800px) {
+      .navbar {
+        align-items: flex-start;
+        flex-direction: column;
+        padding: 16px 0;
+      }
+
+      nav {
+        gap: 12px 18px;
+      }
+
+      .hero-grid,
+      .section-heading,
+      .experience,
+      .about-grid,
+      .contact-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero {
+        padding: 64px 0;
+      }
+
+      .hero-image img {
+        height: 390px;
+      }
+
+      .cards,
+      .quality-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .experience {
+        gap: 42px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .container {
+        width: min(100% - 28px, 1120px);
+      }
+
+      section {
+        padding: 70px 0;
+      }
+
+      h1 {
+        font-size: 48px;
+      }
+
+      .hero-image img {
+        height: 320px;
+      }
+
+      .footer-content {
+        flex-direction: column;
+      }
+    }
+  </style>
 </head>
+
 <body>
-<header class="site-header">
-  <div class="shell nav">
-    <a class="brand" href="#utama">
-      <img src="assets/logo-nsy.webp" alt="Logo NS Yasmin Barokah" width="42" height="42">
-      <span>NS Yasmin Barokah<small>ENTERPRISE</small></span>
+
+<header>
+  <div class="container navbar">
+    <a class="logo" href="#utama">
+      <img src="assets/logo-nsy.webp" alt="Logo NS Yasmin Barokah">
+      <span>
+        NS Yasmin Barokah
+        <small>ENTERPRISE</small>
+      </span>
     </a>
-    <nav aria-label="Navigasi utama">
+
+    <nav>
       <a href="#perkhidmatan">Perkhidmatan</a>
       <a href="#pengalaman">Pengalaman</a>
-      <a href="#tentang">Tentang kami</a>
-      <a class="nav-contact" href="#hubungi">Hubungi kami ↗</a>
+      <a href="#tentang">Tentang Kami</a>
+      <a href="#hubungi">Hubungi Kami</a>
     </nav>
   </div>
 </header>
 
 <main id="utama">
-<section class="hero">
-  <div class="shell hero-inner">
-    <div>
-      <p class="eyebrow">KATERING &amp; PENGURUSAN KANTIN · JOHOR</p>
-      <h1>Hidangan untuk<br>majlis dan <em>setiap hari.</em></h1>
-      <p class="hero-intro">NS Yasmin Barokah Enterprise menyediakan katering, bekalan makanan bermasak dan pengurusan kantin dari Pasir Gudang, Johor.</p>
-      <div class="hero-actions">
-        <a class="button primary" href="#perkhidmatan">Lihat perkhidmatan ↘</a>
-        <a href="#hubungi">Hubungi kami ↗</a>
-      </div>
-    </div>
-    <figure class="hero-image">
-      <img src="assets/hidangan-bufet.webp" alt="Hidangan bufet dalam dulang sajian">
-      <figcaption>Kualiti · Kebersihan · Kepuasan</figcaption>
-    </figure>
-  </div>
-</section>
 
-<section class="section shell" id="perkhidmatan">
-  <div class="section-head">
-    <div><p class="eyebrow">01 / PERKHIDMATAN</p><h2>Apa yang kami sediakan</h2></div>
-    <p>Daripada hidangan harian untuk pekerja dan pelajar hingga sajian untuk hari istimewa.</p>
-  </div>
-  <div class="services">
-    <article><img src="assets/katering-majlis.webp" alt="Aneka lauk dan sajian katering"><div class="service-copy"><span class="index">01</span><h3>Katering majlis</h3><p>Hidangan untuk majlis perkahwinan, majlis rasmi, keraian dan tempahan individu.</p></div></article>
-    <article><img src="assets/hidangan-kantin.webp" alt="Hidangan yang disusun di atas daun pisang"><div class="service-copy"><span class="index">02</span><h3>Pengurusan kantin</h3><p>Pengendalian kantin kilang dan dewan makan institusi pengajian.</p></div></article>
-    <article><img src="assets/makanan-bermasak.webp" alt="Lauk bermasak dalam dulang hidangan"><div class="service-copy"><span class="index">03</span><h3>Bekalan makanan</h3><p>Makanan bermasak dan minuman untuk agensi kerajaan, sektor swasta, kilang dan individu.</p></div></article>
-  </div>
-</section>
-
-<section class="standards">
-  <div class="shell section">
-    <div class="section-head">
-      <div><p class="eyebrow">02 / JAMINAN KUALITI</p><h2>Tiga prinsip kerja kami</h2></div>
-      <p>Unit kawalan mutu memberi perhatian kepada hidangan, kebersihan dan layanan pelanggan.</p>
-    </div>
-    <dl class="principles">
-      <div><dt><span>01</span>Kualiti</dt><dd>Penyeliaan penyediaan makanan dan hidangan, daripada bahan mentah hingga ke meja.</dd></div>
-      <div><dt><span>02</span>Kebersihan</dt><dd>Penjagaan kebersihan diri, peralatan dan ruang kerja sebelum, semasa dan selepas penyediaan.</dd></div>
-      <div><dt><span>03</span>Kepuasan</dt><dd>Layanan mesra dan maklum balas pelanggan sebagai panduan untuk memperbaik perkhidmatan.</dd></div>
-    </dl>
-  </div>
-</section>
-
-<section class="section shell experience" id="pengalaman">
-  <div><p class="eyebrow">03 / PENGALAMAN</p><h2>Dari kantin kilang hingga ke kapal</h2><p>Antara pengalaman penyediaan dan pengendalian makanan yang disenaraikan dalam profil syarikat kami.</p></div>
-  <ul class="experience-list">
-    <li><span class="index">01</span><div><h3>Premium Vegetable Oil Sdn. Bhd.</h3><p>Mengurus kantin kilang di Pasir Gudang selama setahun.</p></div></li>
-    <li><span class="index">02</span><div><h3>PERSTIMA Berhad</h3><p>Membekalkan hidangan makan tengah hari.</p></div></li>
-    <li><span class="index">03</span><div><h3>Kapal Gigira Laitebo</h3><p>Membekalkan makan tengah hari dan makan malam selama sebulan.</p></div></li>
-    <li><span class="index">04</span><div><h3>Majlis dan agihan makanan</h3><p>Menyediakan hidangan untuk majlis serta mengagihkan makanan bagi pihak penyumbang.</p></div></li>
-  </ul>
-</section>
-
-<section class="about" id="tentang">
-  <div class="shell section about-inner">
-    <img src="assets/jaminan-kualiti.webp" alt="Hidangan berkuah dengan udang dan daun herba">
-    <div>
-      <p class="eyebrow">04 / TENTANG KAMI</p>
-      <h2>Berpangkalan di Pasir Gudang</h2>
-      <p>NS Yasmin Barokah Enterprise didaftarkan pada 3 Jun 2020. Pasukan kami mengendalikan penyediaan makanan, penyajian dan kawalan mutu di bawah pengurusan Shamsudin bin Mohamed.</p>
-      <blockquote>“Memberikan perkhidmatan yang efektif dan mesra pelanggan.”</blockquote>
-      <p class="registration">No. pendaftaran<strong>202003099905 (JM0935032-V)</strong></p>
-    </div>
-  </div>
-</section>
-
-<section class="contact" id="hubungi">
-  <div class="shell section contact-inner">
-    <div><p class="eyebrow">05 / HUBUNGI KAMI</p><h2>NS Yasmin Barokah Enterprise</h2></div>
-    <div class="contact-details">
+  <section class="hero">
+    <div class="container hero-grid">
       <div>
-        <p class="contact-label">ALAMAT PERNIAGAAN</p>
-        <address>No. 35, Jalan Mawar Merah 3/1<br>Business Centre 2, 81700 Pasir Gudang<br>Johor, Malaysia</address>
-        <a class="button primary" href="https://www.google.com/maps/search/?api=1&query=35%20Jalan%20Mawar%20Merah%203%2F1%20Business%20Centre%202%2081700%20Pasir%20Gudang%20Johor">Cari alamat di peta ↗</a>
+        <div class="label">KATERING · KANTIN · JOHOR</div>
+        <h1>Hidangan untuk majlis dan <span>setiap hari.</span></h1>
+        <p class="hero-text">
+          NS Yasmin Barokah Enterprise menyediakan katering,
+          bekalan makanan bermasak dan pengurusan kantin
+          dari Pasir Gudang, Johor.
+        </p>
+
+        <div class="buttons">
+          <a class="button button-primary" href="#perkhidmatan">
+            Lihat Perkhidmatan
+          </a>
+          <a class="button button-outline" href="#hubungi">
+            Hubungi Kami
+          </a>
+        </div>
       </div>
-      <div class="contact-block">
-        <p class="contact-label">WAKTU OPERASI</p>
-        <p>Isnin – Sabtu<br><strong>11:00 pagi – 5:00 petang</strong></p>
-        <p class="closed">Ahad · Ditutup</p>
+
+      <div class="hero-image">
+        <img src="assets/hidangan-bufet.webp" alt="Hidangan bufet NS Yasmin Barokah">
+        <div class="hero-badge">Kualiti · Kebersihan · Kepuasan</div>
       </div>
-      <div class="contact-block">
-        <p class="contact-label">TEMPAHAN</p>
+    </div>
+  </section>
+
+  <section id="perkhidmatan">
+    <div class="container">
+      <div class="section-heading">
+        <div>
+          <div class="label">01 / PERKHIDMATAN</div>
+          <h2>Apa yang kami sediakan</h2>
+        </div>
         <p>
-          <a href="tel:+60137317632">Hala Falah · 013 731 7632</a><br>
-          <a href="tel:+60127377632">Sham · 012 737 7632</a><br>
-          <a href="tel:+60127717632">Farha · 012 771 7632</a>
+          Hidangan harian untuk pekerja dan pelajar,
+          serta sajian istimewa untuk pelbagai majlis.
+        </p>
+      </div>
+
+      <div class="cards">
+        <article class="card">
+          <img src="assets/katering-majlis.webp" alt="Hidangan katering">
+          <div class="card-content">
+            <div class="card-number">01</div>
+            <h3>Katering Majlis</h3>
+            <p>
+              Hidangan untuk majlis perkahwinan,
+              majlis rasmi, keraian dan tempahan individu.
+            </p>
+          </div>
+        </article>
+
+        <article class="card">
+          <img src="assets/hidangan-kantin.webp" alt="Hidangan kantin">
+          <div class="card-content">
+            <div class="card-number">02</div>
+            <h3>Pengurusan Kantin</h3>
+            <p>
+              Pengendalian kantin kilang dan dewan makan
+              institusi pengajian.
+            </p>
+          </div>
+        </article>
+
+        <article class="card">
+          <img src="assets/makanan-bermasak.webp" alt="Makanan bermasak">
+          <div class="card-content">
+            <div class="card-number">03</div>
+            <h3>Bekalan Makanan</h3>
+            <p>
+              Makanan bermasak dan bahan minuman
+              untuk organisasi, kilang dan individu.
+            </p>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="quality">
+    <div class="container">
+      <div class="section-heading">
+        <div>
+          <div class="label">02 / JAMINAN KUALITI</div>
+          <h2>Tiga prinsip kerja kami</h2>
+        </div>
+        <p>
+          Setiap hidangan disediakan dengan perhatian
+          terhadap rasa, kebersihan dan layanan pelanggan.
+        </p>
+      </div>
+
+      <div class="quality-grid">
+        <div class="quality-item">
+          <strong>01 · Kualiti</strong>
+          <p>
+            Penyeliaan makanan daripada bahan mentah
+            hingga ke meja pelanggan.
+          </p>
+        </div>
+
+        <div class="quality-item">
+          <strong>02 · Kebersihan</strong>
+          <p>
+            Penjagaan diri, peralatan dan ruang kerja
+            sebelum, semasa dan selepas penyediaan.
+          </p>
+        </div>
+
+        <div class="quality-item">
+          <strong>03 · Kepuasan</strong>
+          <p>
+            Layanan mesra dan maklum balas pelanggan
+            untuk memperbaik perkhidmatan.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="pengalaman">
+    <div class="container experience">
+      <div class="experience-intro">
+        <div class="label">03 / PENGALAMAN</div>
+        <h2>Dari kantin kilang hingga ke kapal</h2>
+        <p>
+          Antara pengalaman NS Yasmin Barokah Enterprise
+          dalam penyediaan dan pengendalian makanan.
+        </p>
+      </div>
+
+      <ul class="experience-list">
+        <li>
+          <span>01</span>
+          <div>
+            <h3>Premium Vegetable Oil Sdn. Bhd.</h3>
+            <p>Mengurus kantin kilang di Pasir Gudang selama setahun.</p>
+          </div>
+        </li>
+
+        <li>
+          <span>02</span>
+          <div>
+            <h3>PERSTIMA Berhad</h3>
+            <p>Membekalkan hidangan makan tengah hari.</p>
+          </div>
+        </li>
+
+        <li>
+          <span>03</span>
+          <div>
+            <h3>Kapal Gigira Laitebo</h3>
+            <p>Membekalkan makan tengah hari dan makan malam selama sebulan.</p>
+          </div>
+        </li>
+
+        <li>
+          <span>04</span>
+          <div>
+            <h3>Majlis dan Agihan Makanan</h3>
+            <p>Menyediakan hidangan majlis dan agihan makanan.</p>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="about" id="tentang">
+    <div class="container about-grid">
+      <img class="about-image" src="assets/jaminan-kualiti.webp" alt="Hidangan makanan bermasak">
+
+      <div class="about-text">
+        <div class="label">04 / TENTANG KAMI</div>
+        <h2>Berpangkalan di Pasir Gudang</h2>
+        <p>
+          NS Yasmin Barokah Enterprise didaftarkan pada
+          3 Jun 2020. Pasukan kami mengendalikan penyediaan
+          makanan, penyajian dan kawalan mutu.
+        </p>
+
+        <blockquote>
+          “Memberikan perkhidmatan yang efektif
+          dan mesra pelanggan.”
+        </blockquote>
+
+        <p>
+          No. pendaftaran<br>
+          <strong>202003099905 (JM0935032-V)</strong>
         </p>
       </div>
     </div>
-  </div>
-</section>
+  </section>
+
+  <section class="contact" id="hubungi">
+    <div class="container contact-grid">
+      <div>
+        <div class="label">05 / HUBUNGI KAMI</div>
+        <h2>NS Yasmin Barokah Enterprise</h2>
+      </div>
+
+      <div class="contact-box">
+        <div class="contact-item">
+          <div class="contact-title">ALAMAT PERNIAGAAN</div>
+          <address>
+            No. 35, Jalan Mawar Merah 3/1<br>
+            Business Centre 2, 81700 Pasir Gudang<br>
+            Johor, Malaysia
+          </address>
+        </div>
+
+        <div class="contact-item">
+          <div class="contact-title">WAKTU OPERASI</div>
+          <p>
+            Isnin – Sabtu<br>
+            <strong>11:00 pagi – 5:00 petang</strong>
+          </p>
+          <p>Ahad · Ditutup</p>
+        </div>
+
+        <div class="contact-item">
+          <div class="contact-title">TEMPAHAN</div>
+          <p>
+            <a href="tel:+60137317632">Hala Falah · 013 731 7632</a><br>
+            <a href="tel:+60127377632">Sham · 012 737 7632</a><br>
+            <a href="tel:+60127717632">Farha · 012 771 7632</a>
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
 </main>
 
 <footer>
-  <div class="shell footer-inner">
+  <div class="container footer-content">
     <span>© NS Yasmin Barokah Enterprise</span>
     <a href="#utama">Kembali ke atas ↑</a>
   </div>
 </footer>
+
 </body>
 </html>
